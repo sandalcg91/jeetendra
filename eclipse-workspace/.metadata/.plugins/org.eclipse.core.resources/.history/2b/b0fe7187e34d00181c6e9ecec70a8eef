@@ -1,0 +1,26 @@
+package com.basic;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class ProductUpdate {
+
+	public static void main(String[] args)
+	{
+		productDTO prod = new productDTO();
+		prod.setPid(3);
+		prod.setPname("MI Note5 pro");
+		prod.setPtype("Mobile");
+		prod.setPrice(16000);
+		prod.setQuantity(5);
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		session.update(prod);
+		tx.commit();
+		session.close();
+	}
+}

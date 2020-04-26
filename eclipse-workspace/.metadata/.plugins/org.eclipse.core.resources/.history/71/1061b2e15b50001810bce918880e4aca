@@ -1,0 +1,11 @@
+package com.clothshop.practice;
+
+public class Cloths {
+
+	private Integer cid;
+	private String cname;
+	private String types;
+	private Double price;
+	private Cloth
+	
+}

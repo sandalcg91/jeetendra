@@ -1,0 +1,31 @@
+package com.basic;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class ProductData {
+
+	public static void main(String[] args)
+	{
+		productDTO prod = new productDTO();   //transist
+		prod.setPname("iphone 4s");
+		prod.setPtype("Mobile");
+		prod.setPrice(5000);
+		prod.setQuantity(13);
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		
+		session.save(prod);  // persist
+		
+		prod.setPrice(6500);
+		
+		session.merge(prod);
+		
+		tx.commit();
+		session.close();
+	}
+}

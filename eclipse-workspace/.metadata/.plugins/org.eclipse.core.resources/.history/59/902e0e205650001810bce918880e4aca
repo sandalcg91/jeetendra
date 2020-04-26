@@ -1,0 +1,24 @@
+package com.state_country.practice;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class State_Country_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		
+		
+		Transaction tx = session.beginTransaction();
+		session.update(v1);
+		session.update(v2);
+		session.update(v3);
+		tx.commit();
+		session.close();
+	}
+}

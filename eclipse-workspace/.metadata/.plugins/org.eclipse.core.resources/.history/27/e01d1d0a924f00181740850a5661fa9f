@@ -1,0 +1,17 @@
+package com.post_comm.practice;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Post_Comm_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session sesion = sessionFactory.openSession();
+		
+		Post p = new post();
+		
+	}
+}

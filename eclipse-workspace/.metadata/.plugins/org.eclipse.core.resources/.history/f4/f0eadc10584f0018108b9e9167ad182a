@@ -1,0 +1,9 @@
+package com.crat_item.practice;
+
+public class Cart {
+
+	private Integer cid;
+	private String name;
+	private Double total;
+	
+}

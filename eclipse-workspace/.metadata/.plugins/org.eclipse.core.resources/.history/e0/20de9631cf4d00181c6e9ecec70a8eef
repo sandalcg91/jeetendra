@@ -1,0 +1,50 @@
+package com.named.practice;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class EmployeeData {
+
+	public static void main(String[] args)
+	{
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		Query q = session.getNamedQuery("AllEmployee");
+		List list = q.list();
+		Iterator itr = list.iterator();
+		EmployeeDTO dto;
+		while(itr.hasNext())
+		{
+			dto = (EmployeeDTO)itr.next();
+			System.out.println(dto.getEid()+" "+dto.getFirstname()+" "+dto.getSalary());
+		}
+		
+		System.out.println("---------------------------------------------------------------");
+		
+		Query q1 = session.getNamedQuery("Employee_Id");
+			q1.setParameter("id", 3);
+	//		q1.setParameter("ct", "indore");
+			
+			List list1 = q1.list();
+			Iterator itr1 = list1.iterator();
+			EmployeeDTO dto1;
+			while(itr1.hasNext())
+			{
+				dto1 = (EmployeeDTO)itr1.next();
+				System.out.println(dto1.getEid()+" "+dto1.getFirstname()+" "+dto1.getSalary());
+			}
+		
+		
+		
+		
+		
+		session.close();
+	}
+}

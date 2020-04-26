@@ -1,0 +1,9 @@
+package com.singer_songs.practice;
+
+public class Singer {
+
+	private Integer sid;
+	private String sname;
+	private String award;
+	private Set song;
+}

@@ -1,0 +1,15 @@
+package com.cart_item.practice;
+
+public class Cart_Item_Test {
+
+	public static void main(String[] args) {
+		
+		CartDTO cdto = new CartDTO();
+		cdto.setCid(101);
+		cdto.setName("electric");
+
+		ItemsDTO i1 = new ItemsDTO();
+		
+		
+	}
+}

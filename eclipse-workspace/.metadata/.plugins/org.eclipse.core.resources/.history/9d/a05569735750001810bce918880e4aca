@@ -1,0 +1,34 @@
+package com.cre_person.practice;
+
+public class CreaditCard {
+
+	private Long ccno;
+	private String bankname;
+	private Integer limit;
+	private Person perObject;
+	public Long getCcno() {
+		return ccno;
+	}
+	public void setCcno(Long ccno) {
+		this.ccno = ccno;
+	}
+	public String getBankname() {
+		return bankname;
+	}
+	public void setBankname(String bankname) {
+		this.bankname = bankname;
+	}
+	public Integer getLimit() {
+		return limit;
+	}
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+	}
+	public Person getPerObject() {
+		return perObject;
+	}
+	public void setPerObject(Person perObject) {
+		this.perObject = perObject;
+	}
+	
+}

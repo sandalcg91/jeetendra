@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.dept_empl.select">
+ <class name="" table="teacher">
+ <id name="tid" column="TID"></id>
+ <property name="firstname" column="FNAME"></property>
+ <property name="lastname" column="LNAME"></property>
+ <property name="salary" column="SALARY"></property>
+ 
+  <set name="emp" cascade="all" inverse="true">
+ <key column="deptid"/>
+ <one-to-many class="Employee"/>
+ </set> 
+ 
+ <many-to-one name="deptObject" column="DEPTID" class="Department" cascade="all"/>
+ 
+ </class>
+ </hibernate-mapping>

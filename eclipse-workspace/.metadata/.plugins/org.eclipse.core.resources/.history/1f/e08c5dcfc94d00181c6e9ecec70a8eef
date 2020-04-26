@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.named.practice">
+ <class name="EmployeeDTO" table="empl">
+ 	<id name="eid" column="EID">
+	<generator class="increment"></generator>
+	</id> 
+	<property name="firstname"   column="FIRSTNAME"></property>
+	<property name="lastname"    column="LASTNAME"></property>
+	<property name="designation" column="DESIGNATION"></property>
+	<property name="salary"      column="SALARY"></property>
+	<property name="address"     column="ADDRESS"></property> 
+	<property name="city"		 column="CITY"></property>
+	<property name="pincode"	 column="PINCODE"></property>
+ </class>
+ <query name="AllEmployee">
+ <![CDATA[from employeeDTO]]>
+ </query>
+ </hibernate-mapping>

@@ -1,0 +1,10 @@
+package com.cust_vend.practice;
+
+public class Customer {
+
+	private Integer cid;
+	private String name;
+	private Double mobile;
+	private Integer vendorId;
+	
+}

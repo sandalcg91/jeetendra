@@ -1,0 +1,10 @@
+package com.cust_vend.practice;
+
+public class CustVend_SelectAll {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

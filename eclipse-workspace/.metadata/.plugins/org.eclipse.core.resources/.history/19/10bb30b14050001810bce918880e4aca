@@ -1,0 +1,35 @@
+package com.book_publisher.delete;
+
+import java.util.Iterator;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Book_Publisher_Delete_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		
+		Query q = session.createQuery("from Book");
+		q.setParameter("bookid", 1231);
+		Book b = null;
+		Iterator itr = q.iterate();
+		while(itr.hasNext())
+		{
+			b = (Book)itr.next();
+			session.delete(b);
+		}
+		
+		Publisher p = b.getPubObject();
+		session.delete(p);
+		
+		tx.commit();
+		session.close();
+	}
+}

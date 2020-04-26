@@ -1,0 +1,19 @@
+package com.Author_book.practice;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Auther_Book_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session sesson = sessionFactory.openSession();
+		
+		Author a = new Author();
+		a.setAid(1111);
+		a.setAname("Chetan");
+		a.setAward("bharat ratn");
+	}
+}

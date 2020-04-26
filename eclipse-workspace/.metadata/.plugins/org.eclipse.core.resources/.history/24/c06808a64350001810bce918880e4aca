@@ -1,0 +1,10 @@
+package com.veh_owner.update;
+
+public class Vehicle {
+
+	private Integer vid;
+	private String vname;
+	private String type;
+	private Owner ownerObject;
+	
+}

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.clothshop.practice">
+ <class name="Cloths" table="cloths">
+ <id name="cid" column="CLOTHID"></id>
+ <property name="cname" column="CNAME"></property>
+ <property name="types" column="TYPES"></property>
+ <property name="price" column="PRICE"></property>
+ 
+ <many-to-one name="shopObject" column="SHOPID" class="SHOP" cascade="all"/>
+ 
+ </class>
+ </hibernate-mapping>

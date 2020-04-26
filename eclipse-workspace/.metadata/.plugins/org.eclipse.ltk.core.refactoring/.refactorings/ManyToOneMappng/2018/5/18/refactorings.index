@@ -1,0 +1,62 @@
+1525497256294	Rename type 'Vender'
+1525499762868	Copy files
+1525499769495	Delete elements
+1525500175227	Copy files
+1525500182096	Delete elements
+1525500755487	Copy files
+1525500763728	Delete elements
+1525500937946	Copy files
+1525500944661	Delete elements
+1525501150171	Copy files
+1525501159315	Delete elements
+1525501998658	Copy files
+1525502275103	Rename resource 'custDTO.hbm.xml'
+1525502290860	Rename resource 'vendorDTO.hbm.xml'
+1525502958916	Rename package 'com.dept_empl.practice'
+1525503247227	Copy compilation unit
+1525504546507	Copy files
+1525504559015	Rename resource 'vendorDTO.hbm.xml'
+1525504571672	Rename resource 'custDTO.hbm.xml'
+1525506041738	Copy compilation unit
+1525506081152	Rename type 'Vend_Cust_Test'
+1525508637388	Rename type 'Book_Publisher_Delete_Test'
+1525508662684	Copy compilation unit
+1525510897583	Rename package 'com.car_owner.update'
+1525510909748	Delete element
+1525511252190	Copy files
+1525511279526	Rename resource 'vendorDTO.hbm.xml'
+1525511304373	Rename resource 'custDTO.hbm.xml'
+1525511544419	Copy compilation unit
+1525511570361	Rename type 'Dept_Empl_Test'
+1525512776219	Copy compilation unit
+1525514065960	Copy files
+1525514097485	Rename resource 'ownerDTO.hbm.xml'
+1525514222969	Rename resource 'vehiDTO.hbm.xml'
+1525514412955	Copy compilation unit
+1525514435977	Rename type 'Vehi_Owner_Test'
+1525514889165	Rename package 'com.stu._cour.selectAll'
+1525515058779	Copy compilation unit
+1525516075814	Copy files
+1525516099005	Rename resource 'courseDTO.hbm.xml'
+1525516196577	Rename resource 'stuDTO.hbm.xml'
+1525516308361	Copy compilation unit
+1525516337083	Rename type 'Stud_Course_Test'
+1525516948841	Copy compilation unit
+1525518609505	Copy files
+1525518633295	Rename resource 'courseDTO.hbm.xml'
+1525518646446	Rename resource 'stuDTO.hbm.xml'
+1525518900540	Copy compilation unit
+1525518927173	Rename type 'Vehi_Owner_Test'
+1525519441728	Copy files
+1525519485116	Rename resource 'deptDTO.hbm.xml'
+1525519658682	Rename resource 'emplDTO.hbm.xml'
+1525519716383	Rename type 'CreaditCard'
+1525521590652	Rename compilation unit 'ClothShop.java'
+1525521651454	Copy files
+1525521674771	Rename resource 'courseDTO.hbm.xml'
+1525521903010	Rename resource 'stuDTO.hbm.xml'
+1525525498383	Copy files
+1525525519105	Rename resource 'docDTO.hbm.xml'
+1525525716388	Rename resource 'patientDTO.hbm.xml'
+1525526867598	Copy compilation unit
+1525526887584	Rename type 'Book_Publisher_Delete_Test'

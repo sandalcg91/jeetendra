@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.cust_vend.practice">
+ <class name="Customer" table="customer">
+ <id name="custid" column="Customer_ID"></id>
+ <property name="custname" column="CNAME"></property>
+ <property name="mobile" column="MOBILENO"></property>
+ 
+ <many-to-one name="parentObject" column="vdummy" class="Vendor" cascade="all"/>
+ 
+ </class>
+ </hibernate-mapping>

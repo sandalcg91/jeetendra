@@ -1,0 +1,25 @@
+package com.book_publisher.delete;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Book_Publisher_Delete_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		
+		
+		Transaction tx = session.beginTransaction();
+		
+		session.save(b1);
+		session.save(b2);
+		
+		tx.commit();
+		session.close();
+	}
+}

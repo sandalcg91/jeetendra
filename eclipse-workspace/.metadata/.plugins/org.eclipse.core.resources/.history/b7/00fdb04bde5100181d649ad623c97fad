@@ -1,0 +1,26 @@
+package com.uni_vice.update;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Univ_VC_Update_Test {
+
+	SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+	Session session = sessionFactory.openSession();
+	Transaction tx = session.beginTransaction();
+	
+	public void createDataBase()
+	{
+		University uni = new University();
+		uni.setUniid(12345611);
+		uni.setUniname("Vit-University");
+		uni.setRanking("1st");
+		
+		ViceChancellor vc1 = new ViceChancellor();
+		vc1.setVcid(1231);
+		vc1.setVcname("shankar v.");
+		vc1.setDegree("P.Hd");
+	}
+}

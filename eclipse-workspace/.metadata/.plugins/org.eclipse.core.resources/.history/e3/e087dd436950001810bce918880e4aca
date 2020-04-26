@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.cre_person.practice">
+ <class name="CreditCard" table="creditcard">
+ <id name="ccno" column="CCNO"></id>
+ <property name="bankname" column="BANKNAME"></property>
+ <property name="limit" column="LIMIT"></property>
+ 
+ <many-to-one name="perObject" column="PERSONID" class="Person" cascade="all"/>
+ 
+ </class>
+ </hibernate-mapping>

@@ -1,0 +1,48 @@
+package com.cache.practice;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
+
+public class QueryCacheWithCriteria {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+	
+		Session session = sessionFactory.openSession();
+		Criteria crt = session.createCriteria(EmployeeDTO.class);
+		crt.add(Restrictions.eq("eid", 2));
+		crt.setCacheable(true);
+		List list = crt.list();
+		Iterator itr = list.iterator();
+		EmployeeDTO dto;
+		while(itr.hasNext())
+		{
+			dto = (EmployeeDTO)itr.next();
+			System.out.println(dto.getEid()+" "+dto.getFirstname()+" "+dto.getSalary());
+		}
+		session.close();
+		
+		Session session1 = sessionFactory.openSession();
+		Criteria crt1 = session1.createCriteria(EmployeeDTO.class);
+		crt1.add(Restrictions.eq("eid", 2));
+		crt1.setCacheable(true); 
+		List list1 = crt1.list();
+		Iterator itr1 = list1.iterator();
+		EmployeeDTO dto1;
+		while(itr1.hasNext())
+		{
+			dto1 = (EmployeeDTO)itr1.next();
+			System.out.println(dto1.getEid()+" "+dto1.getFirstname()+" "+dto1.getSalary());
+		}
+		session1.close();
+		
+	}	
+}

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.genTag.Wrapper">
+ <class name="OrdersDTO" table="orders">
+ 	<id name="oid" column="OID">
+	<generator class="assigned"></generator>
+	</id>
+	<property name="odate"       column="Order_Date"></property>
+	<property name="status"      column="Order_status"></property>
+	<property name="amount"      column="AMOUNT"></property>
+</class>
+
+ </hibernate-mapping>

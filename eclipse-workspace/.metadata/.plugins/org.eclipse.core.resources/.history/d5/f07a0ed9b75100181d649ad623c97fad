@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.vend_cust.all">
+ <class name="Customer" table="customer">
+ <id name="cid" column="Customer_ID"></id>
+ <property name="name" column="CNAME"></property>
+ <property name="mobile" column="MOBILE_NO"></property>
+ 
+ <property name="vendorId" column="VendorId" insert="false"></property>
+ 
+ <many-to-one name="vendObject" column="VendId" cascade="all"/>
+ 
+ </class>
+ </hibernate-mapping>

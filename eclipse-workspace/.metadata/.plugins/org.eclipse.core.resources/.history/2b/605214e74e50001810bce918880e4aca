@@ -1,0 +1,5 @@
+package com.patient_doc.practice;
+
+public class Patient {
+
+}

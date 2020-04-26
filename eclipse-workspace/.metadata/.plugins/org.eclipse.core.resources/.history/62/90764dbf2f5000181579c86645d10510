@@ -1,0 +1,19 @@
+package com.dept_empl.practice;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Dept_Empl_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		Department d = new Department();
+		d.setDeptid(151);
+		d.setDeptname("Management");
+		d.setLocation("London");
+	}
+}

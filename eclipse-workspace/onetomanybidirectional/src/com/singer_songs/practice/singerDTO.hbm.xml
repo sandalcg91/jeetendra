@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.singer_songs.practice">
+ <class name="Singer" table="singer">
+ <id name="sid" column="SID"></id>
+ <property name="sname" column="SNAME" ></property>
+ <property name="award" column="AWARD"></property>
+ 
+ <set name="song" cascade="all" inverse="true">
+ <key column="singerid"/>
+ <one-to-many class="Song"/>
+ </set>
+ 
+ </class>
+ 
+ </hibernate-mapping>

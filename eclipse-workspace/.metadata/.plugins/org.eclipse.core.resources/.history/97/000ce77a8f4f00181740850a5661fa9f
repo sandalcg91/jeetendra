@@ -1,0 +1,21 @@
+package com.emp_cer.practice;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Empl_Cert_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		Employee e = new Employee();
+		e.setEid(1);
+		e.setEname("Manish");
+		e.setSalary(45000.00);
+		
+		
+	}
+}

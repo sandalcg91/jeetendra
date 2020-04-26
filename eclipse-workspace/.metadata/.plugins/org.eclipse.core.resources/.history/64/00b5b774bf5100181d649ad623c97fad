@@ -1,0 +1,9 @@
+package com.singer_songs.practice;
+
+public class Song {
+
+	private Integer songid;
+	private String songname;
+	private String duration;
+	
+}

@@ -1,0 +1,9 @@
+package com.dept_empl.practice;
+
+public class Department {
+
+	private Integer deptid;
+	private String deptname;
+	private String location;
+	
+}

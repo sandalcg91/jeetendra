@@ -1,0 +1,40 @@
+package com.teach_sub.update;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Teach_Sub_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		
+		Teacher t = new Teacher();
+		t.setTid(121);
+		t.setFirstname("payal");
+		t.setLastname("nemade");
+		t.setSalary(45000.00);
+		
+		Subject s1 = new Subject();
+		s1.setSubid(11);
+		s1.setSubname("Java");
+		
+		Set s = new HashSet();
+		s.add(s1);
+		
+		t.setSubject(s);
+		
+		s1.setTeachObject(t);
+		
+		session.save(s1);
+		tx.commit();
+		session.close();
+	}
+}

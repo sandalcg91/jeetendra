@@ -1,0 +1,45 @@
+package com.stu._cour.selectAll;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Vehi_Owner_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		Owner o = new Owner();
+		o.setOwnid(123452);
+		o.setOwnname("Raju jain");
+		o.setAddress("NewJursy");
+		
+		Vehicle v1 = new Vehicle();
+		v1.setVid(1237894);
+		v1.setVname("Honda Brio");
+		v1.setType("four Wheeler");
+		v1.setOwnerObject(o);
+		
+		Vehicle v2 = new Vehicle();
+		v2.setVid(1237895);
+		v2.setVname("HF Delux");
+		v2.setType("two Wheeler");
+		v2.setOwnerObject(o);
+		
+		Vehicle v3 = new Vehicle();
+		v3.setVid(1237896);
+		v3.setVname("vitara brezza");
+		v3.setType("Four Wheeler");
+		v3.setOwnerObject(o);
+		
+		Transaction tx = session.beginTransaction();
+		session.update(v1);
+		session.update(v2);
+		session.update(v3);
+		tx.commit();
+		session.close();
+	}
+}

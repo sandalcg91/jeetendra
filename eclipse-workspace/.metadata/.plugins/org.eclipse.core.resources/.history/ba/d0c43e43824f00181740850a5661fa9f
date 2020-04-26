@@ -1,0 +1,19 @@
+package com.cart_item.practice;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Cart_Item_Get {
+
+public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		CartDTO dto = (CartDTO)session.get(CartDTO.class, 101);
+		System.out.println(dto.getCid()+" "+dto.getName());
+		
+		
+	}
+}

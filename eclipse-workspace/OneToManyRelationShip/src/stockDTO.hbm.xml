@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.stock.practice">
+ <class name="Stock" table="stock">
+ <id name="sid" column="StockId"></id>
+ <property name="sname" column="SNAME"></property>
+ 
+ <set name="stock_record" cascade="all">
+ <key column="stockid"/>
+ <one-to-many class="Stock_Daily_Record"/>
+ </set>
+ 
+ </class>
+ 
+ </hibernate-mapping>

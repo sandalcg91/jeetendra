@@ -1,0 +1,10 @@
+package com.crat_item.practice;
+
+public class Items {
+
+	private Integer item_id;
+	private String name;
+	private Integer totalItem;
+	private Integer quantity;
+	
+}

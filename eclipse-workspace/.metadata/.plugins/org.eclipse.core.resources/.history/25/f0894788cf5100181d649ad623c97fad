@@ -1,0 +1,25 @@
+package com.singer_songs.practice;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Singer_Song_Get_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		
+		Song s = (Song)session.get(Song.class, 121);
+		System.out.println("Song Name : "+s.getSongname());
+		System.out.println("Duration : "+s.getDuration());
+		
+		Singer sing = s.getSingObject();
+		System.out.println("Singer Name : "+sing.getSname());
+		System.out.println("Singer Award : "+sing.getAward());
+		
+		session.close();
+	}
+}

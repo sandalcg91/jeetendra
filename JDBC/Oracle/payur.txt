@@ -1,0 +1,5 @@
+name : payal
+address : sc no 136 Indore
+mobile 7771927894
+education : MCA from vit, vellore
+per : 86

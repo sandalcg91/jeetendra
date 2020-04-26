@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.uni_vice.update">
+ <class name="University" table="university">
+ <id name="uniid" column="UNIVID"></id>
+ <property name="uniname" column="UNIVNAME" ></property>
+ <property name="ranking" column="RANKING"></property>
+ 
+ <set name="viceChan" cascade="all" inverse="true">
+ <key column="univerid"/>
+ <one-to-many class="ViceChancellor"/>
+ </set>
+ 
+ </class>
+ 
+ </hibernate-mapping>

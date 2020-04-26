@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.team_player.practice">
+ <class name="Players" table="player">
+ <id name="pid" column="PlayerID"></id>
+ <property name="pname" column="PNAME"></property>
+ <property name="ranking" column="Ranking"></property>
+ 
+ <!-- <property name="teamid" column="TeamId"></property> -->
+ 
+ <many-to-one name="teamObject" column="teamid" cascade="all" ></many-to-one>
+ 
+ </class>
+ </hibernate-mapping>

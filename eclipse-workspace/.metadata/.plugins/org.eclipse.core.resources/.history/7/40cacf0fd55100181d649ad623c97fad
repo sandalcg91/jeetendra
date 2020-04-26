@@ -1,0 +1,83 @@
+package com.state_dist.selectall;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class State_Dist_Test {
+
+	SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+	Session session = sessionFactory.openSession();
+	Transaction tx = session.beginTransaction();
+	
+	public void createDataBaseOneToMany()
+	{
+		State st = new State();
+		st.setStid(123451);
+		st.setStname("M.P.");
+		st.setPopulation(1050000);
+		
+		District d1 = new District();
+		d1.setDistid(121);
+		d1.setDistname("indore");
+		
+		District d2 = new District();
+		d2.setDistid(122);
+		d2.setDistname("ujjain");
+		
+		Set s = new HashSet();
+		s.add(d1);
+		s.add(d2);
+		
+		st.setDistrict(s);
+		
+		/*d1.setStObjrct(st);
+		d2.setStObjrct(st);*/
+		
+		session.save(st);
+		tx.commit();
+	}
+	
+	public void createDataBaseManyToOne()
+	{
+		State st = new State();
+		st.setStid(123453);
+		st.setStname("U.P.");
+		st.setPopulation(6050000);
+		
+		District d1 = new District();
+		d1.setDistid(125);
+		d1.setDistname("bhopal");
+		
+		District d2 = new District();
+		d2.setDistid(126);
+		d2.setDistname("ratlam");
+		
+		Set s = new HashSet();
+		s.add(d1);
+		s.add(d2);
+		
+		st.setDistrict(s);
+		
+		d1.setStObjrct(st);
+		d2.setStObjrct(st);
+		
+		session.save(d1);
+		tx.commit();
+	}
+	
+	public static void main(String[] args) {
+	
+		State_Dist_Test sdt = new State_Dist_Test();
+		
+		// OneToMany
+		sdt.createDataBaseOneToMany();
+		
+		// ManyToOne
+	//	sdt.createDataBaseManyToOne();
+	}
+}

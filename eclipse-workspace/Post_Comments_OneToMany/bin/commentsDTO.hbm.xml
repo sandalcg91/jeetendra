@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.post_comm.practice">
+ <class name="Comments" table="comment">
+ <id name="commid" column="CommentsID"></id>
+ <property name="comments" column="COMMENTS"></property>
+ 
+ <property name="postid" column="PostId"></property>
+ 
+ </class>
+ </hibernate-mapping>

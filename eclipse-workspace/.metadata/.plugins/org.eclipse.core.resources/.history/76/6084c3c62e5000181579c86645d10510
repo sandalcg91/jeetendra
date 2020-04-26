@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.dept_empl.practice">
+ <class name="Employee" table="employee">
+ <id name="eid" column="EMPID"></id>
+ <property name="firstname" column="FNAME"></property>
+ <property name="lastname" column="LNAME"></property>
+ <property name="salary" column="SALARY"></property>
+ 
+ <many-to-one name="deptObject" column="vdummy" class="Vendor" cascade="all"/>
+ 
+ </class>
+ </hibernate-mapping>

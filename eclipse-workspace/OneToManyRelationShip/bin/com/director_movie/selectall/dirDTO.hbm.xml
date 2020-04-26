@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.director_movie.selectall">
+ <class name="Director" table="director">
+ <id name="dirid" column="Directorid"></id>
+ <property name="dirname" column="DIRNAME"></property>
+ 
+ <set name="movie" cascade="all">
+ <key column="directid"/>
+ <one-to-many class="Movies"/>
+ </set>
+ 
+ </class>
+ 
+ </hibernate-mapping>

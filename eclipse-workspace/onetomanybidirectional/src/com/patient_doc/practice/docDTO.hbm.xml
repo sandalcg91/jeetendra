@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.patient_doc.practice">
+ <class name="Doctor" table="doctor">
+ <id name="docid" column="DOCTORID"></id>
+ <property name="dname" column="DOCTORNAME"></property>
+ <property name="specialist" column="SPECIALIST"></property>
+ 
+ <set name="patient" cascade="all" inverse="true">
+ <key column="docid"></key>
+ <one-to-many class="Patient"/>
+ </set>
+ </class>
+ 
+ </hibernate-mapping>

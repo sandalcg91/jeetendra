@@ -1,0 +1,59 @@
+package com.cache.practice;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class QueryCache {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+	
+		Session session = sessionFactory.openSession();
+//		for(int i=0; i<10; i++)
+//		{	
+		Query query;
+		query = session.createQuery("from EmployeeDTO where eid = 1");
+		query.setCacheable(true);
+		List list = query.list();
+		Iterator itr = list.iterator();
+		EmployeeDTO dto;
+		while(itr.hasNext())
+		{
+			dto = (EmployeeDTO)itr.next();
+			System.out.println(dto.getEid()+" "+dto.getFirstname()+" "+dto.getSalary());
+		}
+//		}
+		session.close();
+		
+		Session session1 = sessionFactory.openSession();
+		query = session1.createQuery("from EmployeeDTO where eid = 1");
+		query.setCacheable(true);
+		List list1 = query.list();
+		Iterator itr1 = list1.iterator();
+		EmployeeDTO dto1;
+		while(itr1.hasNext())
+		{
+			dto1 = (EmployeeDTO)itr1.next();
+			System.out.println(dto1.getEid()+" "+dto1.getFirstname()+" "+dto1.getSalary());
+		}
+		session1.close();
+		
+/*		Session session2 = sessionFactory.openSession();
+		Query query2 = session2.createQuery("from EmployeeDTO where eid = 1");
+		query2.setCacheable(false);
+		List list2 = query2.list();
+		Iterator itr2 = list2.iterator();
+		EmployeeDTO dto2;
+		while(itr2.hasNext())
+		{
+			dto2 = (EmployeeDTO)itr2.next();
+			System.out.println(dto2.getEid()+" "+dto2.getFirstname()+" "+dto2.getSalary());
+		}
+*/	}	
+}

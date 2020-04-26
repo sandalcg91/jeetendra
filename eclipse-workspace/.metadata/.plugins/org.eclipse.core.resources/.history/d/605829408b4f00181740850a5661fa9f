@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.per_phone.practice">
+ <class name="Phone" table="phone">
+ <id name="phoneid" column="PhoneId"></id>
+ <property name="mobile" column="MOBILENO"></property>
+ 
+ <property name="vendorId" column="VendorId"></property>
+ 
+ </class>
+ </hibernate-mapping>

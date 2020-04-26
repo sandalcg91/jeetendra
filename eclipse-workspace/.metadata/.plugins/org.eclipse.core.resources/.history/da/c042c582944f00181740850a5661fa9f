@@ -1,0 +1,8 @@
+package com.Author_book.practice;
+
+public class Books {
+
+	private Integer bid;
+	private String bname;
+	private 
+}

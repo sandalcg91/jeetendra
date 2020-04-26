@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.emp_cer.practice">
+ <class name="Certificate" table="certificate">
+ <id name="cerid" column="certificateId"></id>
+ <property name="cname" column="CERNAME"></property>
+ 
+ <property name="personid" column="PersonId"></property>
+ 
+ </class>
+ </hibernate-mapping>

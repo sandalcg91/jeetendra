@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.patient_doc.practice">
+ <class name="Patient" table="patient">
+ <id name="pid" column="PATIENTID"></id>
+ <property name="pname" column="PNAME"></property>
+ <property name="disease" column="DISEASE"></property>
+ <many-to-one name="docObject" column="DOCTORID" class="Doctor" cascade="all"/>
+ 
+ </class>
+ </hibernate-mapping>

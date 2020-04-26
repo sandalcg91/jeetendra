@@ -1,0 +1,32 @@
+package com.cust_vend.practice;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Vend_Cust_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		Vendor v = new Vendor();
+		v.setVid(101);
+		v.setVname("Chandan");
+		
+		Customer c1 = new Customer();
+		c1.setCustid(1111);
+		c1.setCustname("manish");
+		c1.setMobile(9875641234l);
+		c1.setParentObject(v);
+		
+		Customer c2 = new Customer();
+		c2.setCustid(1112);
+		c2.setCustname("aachal");
+		c2.setMobile(7845124512l);
+		c2.setParentObject(v);
+		
+		
+	}
+}

@@ -1,0 +1,37 @@
+package com.state_dist.selectall;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class State_Dist_Test {
+
+	SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+	Session session = sessionFactory.openSession();
+	Transaction tx = session.beginTransaction();
+	
+	public void createDataBase()
+	{
+		State st = new State();
+		st.setStid(123451);
+		st.setStname("M.P.");
+		st.setPopulation(1050000);
+		
+		District d1 = new District();
+		d1.setDistid(121);
+		d1.setDistname("indore");
+		
+		District d2 = new District();
+		d2.setDistid(122);
+		d2.setDistname("ujjain");
+		
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		
+	}
+}

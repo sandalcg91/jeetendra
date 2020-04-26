@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.pass_flight.delete">
+ <class name="Passenger" table="passenger">
+ <id name="pid" column="PASSID"></id>
+ <property name="pname" column="PASSNAME"></property>
+ <property name="mobile" column="MOBILENO"></property>
+ <property name="from" column="FROM"></property>
+ <property name="to" column="TO"></property>
+ 
+ 
+ </class>
+ 
+ </hibernate-mapping>

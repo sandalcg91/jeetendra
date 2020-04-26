@@ -1,0 +1,23 @@
+package com.cust_vend.practice;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Vendor_Cust_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		Vendor v = new Vendor();
+		v.setVid(11);
+		v.setVname("chandan");
+		
+		Customer c1 = new Customer();
+		c1.setCid(1001);
+		c1.setName("payal");
+		c1.setMobile(7894561234l);
+	}
+}

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.state_dist.selectall">
+ <class name="District" table="district">
+ <id name="distid" column="DISTID"></id>
+ <property name="distname" column="DISTNAME"></property>
+ 
+ <!-- <property name="stateid" column="StateId" insert="false"></property> -->
+ 
+ <many-to-one name="stObject" column="stateid" cascade="all"/>
+ 
+ </class>
+ </hibernate-mapping>

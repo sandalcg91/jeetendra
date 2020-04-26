@@ -1,0 +1,29 @@
+package com.cart_item.practice;
+
+public class Cart_Item_Test {
+
+	public static void main(String[] args) {
+		
+		CartDTO cdto = new CartDTO();
+		cdto.setCid(101);
+		cdto.setName("electric");
+
+		ItemsDTO i1 = new ItemsDTO();
+		i1.setItem_id(201);
+		i1.setName("Mobile");
+		i1.setQuantity(5);
+		
+		ItemsDTO i2 = new ItemsDTO();
+		i2.setItem_id(202);
+		i2.setName("laptop");
+		i2.setQuantity(2);
+		
+		ItemsDTO i3 = new ItemsDTO();
+		i3.setItem_id(203);
+		i3.setName("adapter");
+		i3.setQuantity(10);
+		
+		
+		
+	}
+}

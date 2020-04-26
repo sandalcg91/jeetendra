@@ -1,0 +1,27 @@
+package com.emp_cer.practice;
+
+public class Certificate {
+
+	private Integer cerid;
+	private String cname;
+	private Integer empid;
+	public Integer getCerid() {
+		return cerid;
+	}
+	public void setCerid(Integer cerid) {
+		this.cerid = cerid;
+	}
+	public String getCname() {
+		return cname;
+	}
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
+	public Integer getEmpid() {
+		return empid;
+	}
+	public void setEmpid(Integer empid) {
+		this.empid = empid;
+	}
+	
+}

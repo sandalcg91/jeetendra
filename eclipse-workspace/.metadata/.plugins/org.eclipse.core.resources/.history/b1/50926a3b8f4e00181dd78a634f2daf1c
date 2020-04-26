@@ -1,0 +1,10 @@
+package com.genTag.Wrapper;
+
+public class OrdersDTO {
+
+	private Integer oid;
+	private String odate;
+	private String status;
+	private Double amount;
+	
+}

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.cart_item.practice">
+ <class name="ItemsDTO" table="items">
+ <id name="item_id" column="ITEM_ID"></id>
+ <property name="name" column="INAME"></property>
+ <property name="quantity" column="QUANTITY"></property>
+ 
+ <property name="cart_id" column="CART_ID"></property>
+ 
+ </class>
+ </hibernate-mapping>

@@ -1,0 +1,37 @@
+package com.cart_item.practice;
+
+public class ItemsDTO {
+
+	private Integer item_id;
+	private String name;
+	private Integer quantity;
+	private Integer cart_id;
+
+	public Integer getItem_id() {
+		return item_id;
+	}
+	public void setItem_id(Integer item_id) {
+		this.item_id = item_id;
+	}
+
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
+	public Integer getCart_id() {
+		return cart_id;
+	}
+	public void setCart_id(Integer cart_id) {
+		this.cart_id = cart_id;
+	}
+}

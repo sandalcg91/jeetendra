@@ -1,0 +1,27 @@
+package com.genTag.Wrapper;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class OrdersDataInsert {
+
+	public static void main(String[] args) {
+		
+		OrdersDTO odto = new OrdersDTO();
+		odto.setOid(102);
+		odto.setOdate("2018-04-21");
+		odto.setStatus("dispatched");
+		odto.setAmount(35000.00);
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		
+		session.update(odto);
+		tx.commit();
+		session.close();
+		
+	}
+}

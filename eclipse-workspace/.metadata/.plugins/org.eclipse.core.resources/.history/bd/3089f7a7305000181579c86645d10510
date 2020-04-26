@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.dept_empl.practice">
+ <class name="Department" table="dept">
+ <id name="deptid" column="DEPTID"></id>
+ <property name="deptname" column="DEPTNAME"></property>
+ <property name="location" column="DLOCATION"></property>
+  
+ </class>
+ 
+ </hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.cat_prod.practice">
+ <class name="Category" table="category">
+ <id name="catid" column="catid"></id>
+ <property name="catname" column="CATNAME"></property>
+ 
+ <set name="products" cascade="all">
+ <key column="catid"/>
+ <one-to-many class="Products"/>
+ </set>
+ 
+ </class>
+ 
+ </hibernate-mapping>

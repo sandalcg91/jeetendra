@@ -1,0 +1,27 @@
+package com.post_comm.practice;
+
+public class Comments {
+
+	private Integer commid;
+	private String commType;
+	private Integer postid;
+	public Integer getCommid() {
+		return commid;
+	}
+	public void setCommid(Integer commid) {
+		this.commid = commid;
+	}
+	public String getCommType() {
+		return commType;
+	}
+	public void setCommType(String commType) {
+		this.commType = commType;
+	}
+	public Integer getPostid() {
+		return postid;
+	}
+	public void setPostid(Integer postid) {
+		this.postid = postid;
+	}
+	
+}

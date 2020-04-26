@@ -1,0 +1,85 @@
+package com.uni_vice.update;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Univ_VC_Update_Test {
+
+	SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+	Session session = sessionFactory.openSession();
+	Transaction tx = session.beginTransaction();
+	
+	public void createDataBase()
+	{
+		University uni = new University();
+		uni.setUniid(12345611);
+		uni.setUniname("Vit-University");
+		uni.setRanking("1st");
+		
+		ViceChancellor vc1 = new ViceChancellor();
+		vc1.setVcid(1231);
+		vc1.setVcname("shankar v.");
+		vc1.setDegree("P.Hd");
+		
+		ViceChancellor vc2 = new ViceChancellor();
+		vc2.setVcid(1232);
+		vc2.setVcname("shekhar v.");
+		vc2.setDegree("M.Tech");
+		
+		Set s = new HashSet();
+		s.add(vc1);
+		s.add(vc2);
+		
+		uni.setViceChan(s);
+		
+		vc1.setUniObject(uni);
+		vc2.setUniObject(uni);
+		
+		// onetoMany
+		session.save(uni);
+		tx.commit();
+	}
+	
+	public void updateOneToMany()
+	{
+		University uni = new University();
+		uni.setUniid(12345611);
+		uni.setUniname("Vit-University vellore");
+		uni.setRanking("2nd");
+		
+		ViceChancellor vc1 = new ViceChancellor();
+		vc1.setVcid(1231);
+		vc1.setVcname("shankar vish.");
+		vc1.setDegree("P.Hd");
+		
+		ViceChancellor vc2 = new ViceChancellor();
+		vc2.setVcid(1232);
+		vc2.setVcname("shekhar vish.");
+		vc2.setDegree("M.fill");
+		
+		Set s = new HashSet();
+		s.add(vc1);
+		s.add(vc2);
+		
+		vc1.setUniObject(uni);
+		vc1.setUniObject(uni);
+		
+		uni.setViceChan(s);
+		session.update(vc1);
+		session.update(vc2);
+		tx.commit();
+	}
+	
+	public static void main(String[] args) {
+		Univ_VC_Update_Test uvt = new Univ_VC_Update_Test();
+		
+	//	uvt.createDataBase();
+		
+		uvt.updateOneToMany();
+	}
+}

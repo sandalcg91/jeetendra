@@ -1,0 +1,41 @@
+package com.book_publisher.delete;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Book_Publisher_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		Publisher p = new Publisher();
+		p.setPubid(10203);
+		p.setPubname("Kamal Prakashan");
+		
+		Book b1 = new Book();
+		b1.setBookid(1235);
+		b1.setTitle("Chemistry");
+		b1.setEdition(7);
+		b1.setPrice(50.00);
+		b1.setPubObject(p);
+		
+		Book b2 = new Book();
+		b2.setBookid(1236);
+		b2.setTitle("English");
+		b2.setEdition(2);
+		b2.setPrice(90.00);
+		b2.setPubObject(p);
+		
+		Transaction tx = session.beginTransaction();
+		
+		session.save(b1);
+		session.save(b2);
+		
+		tx.commit();
+		session.close();
+	}
+}

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-configuration PUBLIC  
+ "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-configuration-3.0.dtd">
+ 
+ <hibernate-configuration>
+ <session-factory>
+ 
+ <property name="show_sql">true</property>
+ <property name="hbm2ddl.auto">update</property>
+ <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+ <property name="connection.url">jdbc:mysql://localhost:3306/manytoone</property>
+ <property name="connection.username">root</property>
+ <property name="connection.password">root</property>
+ 
+ <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+ 
+ <mapping resource="com/cust_vend/practice/custDTO.hbm.xml"/>
+ <mapping resource="com/cust_vend/practice/vendorDTO.hbm.xml"/>
+ 
+ <mapping resource="com/dept_empl/select/deptDTO.hbm.xml"/>
+ <mapping resource="com/dept_empl/select/emplDTO.hbm.xml"/>
+ 
+ <mapping resource="com/book_publisher/delete/bookDTO.hbm.xml"/>
+ <mapping resource="com/book_publisher/delete/publisherDTO.hbm.xml"/>
+ 
+ <mapping resource="com/veh_owner/update/ownerDTO.hbm.xml"/>
+ <mapping resource="com/veh_owner/update/vehiDTO.hbm.xml"/>
+ 
+ <mapping resource="com/stu_cour/selectAll/courseDTO.hbm.xml"/>
+ <mapping resource="com/stu_cour/selectAll/stuDTO.hbm.xml"/>
+ 
+ <mapping resource="com/patient_doc/practice/docDTO.hbm.xml"/>
+ <mapping resource="com/patient_doc/practice/patientDTO.hbm.xml"/>
+ 
+ </session-factory>
+ </hibernate-configuration>

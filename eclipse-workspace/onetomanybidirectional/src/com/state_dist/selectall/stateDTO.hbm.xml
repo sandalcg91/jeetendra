@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.state_dist.selectall">
+ <class name="State" table="state">
+ <id name="stid" column="STATEID"></id>
+ <property name="stname" column="STNAME" ></property>
+ <property name="population" column="POPULATION"></property>
+ 
+ <set name="district" cascade="all" inverse="true">
+ <key column="stateid"/>
+ <one-to-many class="District"/>
+ </set>
+ 
+ </class>
+ 
+ </hibernate-mapping>

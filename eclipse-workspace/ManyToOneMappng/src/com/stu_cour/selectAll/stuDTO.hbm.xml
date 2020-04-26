@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.stu_cour.selectAll">
+ <class name="Student" table="student">
+ <id name="rollno" column="ROLLNO"></id>
+ <property name="sname" column="SNAME"></property>
+ 
+ <many-to-one name="courseObject" column="CourseId" class="Course" cascade="all"/>
+ 
+ </class>
+ </hibernate-mapping>

@@ -1,0 +1,11 @@
+package com.book_publisher.delete;
+
+public class Book {
+
+	private Integer bookid;
+	private String bname;
+	private Double price;
+	private Integer edition;
+	private Publisher publ;
+	
+}

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.act_movi.delete">
+ <class name="Movie" table="movie">
+ <id name="mveid" column="MVEID"></id>
+ <property name="mvename" column="MVENAME"></property>
+ <property name="duration" column="DURATION"></property>
+ 
+<!--  <property name="actId" column="ActId" insert="false"></property> -->
+ 
+ <many-to-one name="actObject" column="actid" cascade="all"/>
+ 
+ </class>
+ </hibernate-mapping>

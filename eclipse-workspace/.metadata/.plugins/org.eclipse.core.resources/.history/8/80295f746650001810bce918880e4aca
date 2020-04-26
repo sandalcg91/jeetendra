@@ -1,0 +1,38 @@
+package com.pass_flight.delete;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Flight_Pass_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		
+		Flight f = new Flight();
+		f.setFno(456123);
+		f.setFname("Indigo");
+		f.setDeptime("6:30 PM");
+		
+		Passenger p1 = new Passenger();
+		p1.setPid(1021);
+		p1.setPname("chandan");
+		p1.setMobile(7894561235l);
+		p1.setFrom("Mumbai");
+		p1.setTo("Delhi");
+		p1.setFltObject(f);
+		
+		Passenger p2 = new Passenger();
+		p2.setPid(1022);
+		p2.setPname("manish");
+		p2.setMobile(7412589635l);
+		p2.setFrom("Mumbai");
+		p2.setTo("pune");
+		p2.setFltObject(f);
+		
+	}
+}

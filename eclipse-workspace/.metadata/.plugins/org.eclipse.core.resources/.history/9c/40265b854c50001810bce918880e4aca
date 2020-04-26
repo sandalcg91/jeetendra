@@ -1,0 +1,36 @@
+package com.stu_cour.selectAll;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Stud_Course_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		Course c = new Course();
+		c.setCid(102);
+		c.setCname("Corporate python");
+		c.setDuration("8 month");
+		
+		Student s1 = new Student();
+		s1.setRollno(1234563);
+		s1.setSname("taksh");
+		s1.setCourseObject(c);
+		
+		Student s2 = new Student();
+		s2.setRollno(1234564);
+		s2.setSname("payu");
+		s2.setCourseObject(c);
+		
+		Transaction tx = session.beginTransaction();
+		session.save(s1);
+		session.save(s2);
+		tx.commit();
+		session.close();
+	}
+}

@@ -1,0 +1,24 @@
+package com.dept_empl.select;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Dept_Empl_Retrieve_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		Department d = (Department)session.get(Department.class, 151);
+		
+		
+		Employee e1 = new Employee();
+		e1.setDeptObject(d);
+		
+		
+		session.close();
+	}
+}

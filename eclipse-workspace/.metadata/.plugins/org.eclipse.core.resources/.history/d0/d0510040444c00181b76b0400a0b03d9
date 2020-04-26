@@ -1,0 +1,29 @@
+package com.cache.practice;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.cache.sessionFactory.SessionFactoryDemo;
+
+public class UpdateQuery {
+
+	static EmployeeDTO edto = new EmployeeDTO();
+	
+//	static SessionFactory sessionFactory = SessionFactoryDemo.getSessionFactory();
+	static Session session = SessionFactoryDemo.getSession();
+	static Transaction tx = session.beginTransaction();
+	
+	
+	public static void main(String[] args)
+	{
+		Query query = session.createQuery("update EmployeeDTO set firstname = :fn  where eid = :id ");
+		query.setParameter("fn", "chandan");
+		query.setParameter("id", 2);
+		int res = query.executeUpdate();
+		System.out.println(res+" row affected");
+		tx.commit();
+	}
+}

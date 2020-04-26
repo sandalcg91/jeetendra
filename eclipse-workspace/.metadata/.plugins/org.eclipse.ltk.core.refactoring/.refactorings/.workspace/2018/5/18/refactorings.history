@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;Cart_Items_Demo&apos; to &apos;Cart_Items_OneToMany&apos;&#x0A;- Original element: &apos;Cart_Items_Demo&apos;&#x0A;- Renamed element: &apos;Cart_Items_Demo&apos;&#x0A;- Update references to refactored element" description="Rename Java project &apos;Cart_Items_Demo&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=Cart_Items_Demo" name="Cart_Items_OneToMany" references="true" stamp="1525414715346" version="1.0"/>
+</session>

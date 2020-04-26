@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.cust_vend.practice">
+ <class name="Vendor" table="vendor">
+ <id name="vid" column="VendorID"></id>
+ <property name="name" column="CNAME"></property>
+ 
+ <set name="customer" cascade="all">
+ <key column="cid"/>
+ <one-to-many class="Customer"/>
+ </set>
+ 
+ </class>
+ 
+ </hibernate-mapping>

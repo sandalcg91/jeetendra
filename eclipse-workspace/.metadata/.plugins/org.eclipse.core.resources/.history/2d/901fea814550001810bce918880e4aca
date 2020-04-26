@@ -1,0 +1,45 @@
+package com.veh_owner.update;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Vehi_Owner_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		Owner o = new Owner();
+		o.setOwnid(123451);
+		o.setOwnname("Plank tye");
+		o.setAddress("London");
+		
+		Vehicle v1 = new Vehicle();
+		v1.setVid(1237891);
+		v1.setVname("Honda Activa");
+		v1.setType("Two Wheeler");
+		v1.setOwnerObject(o);
+		
+		Vehicle v2 = new Vehicle();
+		v2.setVid(1237892);
+		v2.setVname("Honda City");
+		v2.setType("Four Wheeler");
+		v2.setOwnerObject(o);
+		
+		Vehicle v3 = new Vehicle();
+		v3.setVid(1237893);
+		v3.setVname("Swift DZire");
+		v3.setType("Four Wheeler");
+		v3.setOwnerObject(o);
+		
+		Transaction tx = session.beginTransaction();
+		session.save(v1);
+		session.save(v2);
+		session.save(v3);
+		tx.commit();
+		session.close();
+	}
+}

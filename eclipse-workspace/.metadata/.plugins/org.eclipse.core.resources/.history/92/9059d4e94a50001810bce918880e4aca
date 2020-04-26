@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.veh_owner.update">
+ <class name="Vehicle" table="vehicle">
+ <id name="vid" column="VEHICLEID"></id>
+ <property name="vname" column="VNAME"></property>
+ <property name="type" column="VTYPE"></property>
+ 
+ <many-to-one name="ownerObject" column="OwnerId" class="Owner" cascade="all"/>
+ 
+ </class>
+ </hibernate-mapping>

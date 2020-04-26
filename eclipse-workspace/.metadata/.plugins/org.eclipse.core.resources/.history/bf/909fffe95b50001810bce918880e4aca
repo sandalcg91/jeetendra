@@ -1,0 +1,9 @@
+package com.clothshop.practice;
+
+public class Shop {
+
+	private Integer shopid;
+	private String sname;
+	private String address;
+	private Cloth
+}

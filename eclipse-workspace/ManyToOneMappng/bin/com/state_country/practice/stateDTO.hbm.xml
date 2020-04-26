@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.state_country.practice">
+ <class name="State" table="state">
+ <id name="sid" column="STATEID"></id>
+ <property name="sname" column="STATENAME"></property>
+ <property name="cm" column="CheifMinister"></property>
+ 
+ <many-to-one name="cntryObject" column="CuntryId" class="Country" cascade="all"/>
+ 
+ </class>
+ </hibernate-mapping>

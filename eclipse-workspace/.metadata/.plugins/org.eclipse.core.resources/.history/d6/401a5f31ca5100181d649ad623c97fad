@@ -1,0 +1,38 @@
+package com.vend_cust.all;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Vend_Cust_del_Test {
+
+	SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+	Session session = sessionFactory.openSession();
+	Transaction tx = session.beginTransaction();
+	
+	public void deleteOneToMany(int vid)
+	{
+		Vendor v = (Vendor)session.get(Vendor.class, vid);
+		session.delete(v);
+		tx.commit();
+	}
+	
+	public void deleteManyToOne(int cid)
+	{
+		Customer c = (Customer)session.get(Customer.class, cid);
+		session.delete(c);
+		tx.commit();
+	}
+	
+	public static void main(String[] args)
+	{
+		Vend_Cust_del_Test del = new Vend_Cust_del_Test();
+		
+		// oneToMany
+		del.deleteOneToMany(13);
+		
+		// manyTooOne
+	//	del.deleteManyToOne(1013);
+	}
+}

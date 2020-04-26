@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.book_lib.get">
+ <class name="Library" table="library">
+ <id name="libid" column="LIBID"></id>
+ <property name="libname" column="LIBNAME"></property>
+ <property name="location" column="BLOCATION"></property>
+ 
+ <many-to-one name="bookObject" column="bookid" class="Book" cascade="all"/>
+ 
+ </class>
+ </hibernate-mapping>

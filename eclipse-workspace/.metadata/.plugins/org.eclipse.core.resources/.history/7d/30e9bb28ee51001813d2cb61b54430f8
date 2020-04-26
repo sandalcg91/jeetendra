@@ -1,0 +1,61 @@
+package com.singer_songs.practice;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Singer_Songs_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		
+		Singer sing = new Singer();
+		sing.setSid(10232);
+		sing.setSname("Arijeet-sing");
+		sing.setAward("Best-debu");
+		
+		Song s1 = new Song();
+		s1.setSongid(124);
+		s1.setSongname("tum-hi-ho");
+		s1.setDuration("3:58");
+		
+		Song s2 = new Song();
+		s2.setSongid(125);
+		s2.setSongname("khamosiya");
+		s2.setDuration("4:11");
+		
+		/*Song s3 = new Song();
+		s3.setSongid(123);
+		s3.setSongname("jina-jina");
+		s3.setDuration("2:54");
+		*/
+		
+		// oneTomany
+		Set s = new HashSet();
+		s.add(s1);
+		s.add(s2);
+	//	s.add(s3);
+		
+		sing.setSong(s);
+		
+		// manyToone
+		s1.setSingObject(sing);
+		s2.setSingObject(sing);
+//		s3.setSingObject(sing);
+		
+		// manyToone
+		session.save(s1);
+		
+		// oneTomany
+	//	session.save(sing);
+		tx.commit();
+		session.close();
+	}
+}

@@ -1,0 +1,5 @@
+package com.pass_flight.delete;
+
+public class Flight {
+
+}

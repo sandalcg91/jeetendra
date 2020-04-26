@@ -1,0 +1,42 @@
+package com.singer_songs.practice;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Singer_Songs_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		Singer sing = new Singer();
+		sing.setSid(10231);
+		sing.setSname("Neha kakkar");
+		sing.setAward("Best-singer");
+		
+		Song s1 = new Song();
+		s1.setSongid(121);
+		s1.setSongname("Mile-Ho-tum");
+		s1.setDuration("3:34");
+		
+		Song s2 = new Song();
+		s2.setSongid(122);
+		s2.setSongname("DJ-wale");
+		s2.setDuration("4:44");
+		
+		Song s3 = new Song();
+		s3.setSongid(123);
+		s3.setSongname("jina-jina");
+		s3.setDuration("2:54");
+		
+		Set s = new HashSet();
+		s.add(s1);
+		s.add(s2);
+		s.add(s3);
+	}
+}

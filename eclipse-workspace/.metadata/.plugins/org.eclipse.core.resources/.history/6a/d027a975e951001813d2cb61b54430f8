@@ -1,0 +1,40 @@
+package com.dept_empl.select;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Dept_Empl_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		Department d = new Department();
+		d.setDeptid(152);
+		d.setDeptname("Science");
+		d.setLocation("Newyork");
+		
+		Employee e1 = new Employee();
+		e1.setEid(10023);
+		e1.setFirstname("aachal");
+		e1.setLastname("jaiswal");
+		e1.setSalary(175000.00);
+		e1.setDeptObject(d);
+		
+		Employee e2 = new Employee();
+		e2.setEid(10024);
+		e2.setFirstname("manish");
+		e2.setLastname("chou");
+		e2.setSalary(150000.00);
+		e2.setDeptObject(d);
+		
+		Transaction tx = session.beginTransaction();
+		session.save(e1);
+		session.save(e2);
+		tx.commit();
+		session.close();
+	}
+}

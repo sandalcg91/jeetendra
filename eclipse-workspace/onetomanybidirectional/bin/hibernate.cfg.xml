@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-configuration PUBLIC  
+ "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+ "/home/pp/chandan/connector/hibernate-configuration-3.0.dtd">
+ 
+ <hibernate-configuration>
+ <session-factory>
+ 
+ <property name="show_sql">true</property>
+ <property name="hbm2ddl.auto">update</property>
+ <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+ <property name="connection.url">jdbc:mysql://localhost:3306/otombidirectional</property>
+ <property name="connection.username">root</property>
+ <property name="connection.password">root</property>
+ 
+ <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+ 
+ <mapping resource="com/vend_cust/all/customerDTO.hbm.xml"/>
+ <mapping resource="com/vend_cust/all/vendorDTO.hbm.xml"/>
+ 
+ <mapping resource="com/singer_songs/practice/singerDTO.hbm.xml"/>
+ <mapping resource="com/singer_songs/practice/songDTO.hbm.xml"/>
+ 
+ <mapping resource="com/state_dist/selectall/distDTO.hbm.xml"/>
+ <mapping resource="com/state_dist/selectall/stateDTO.hbm.xml"/>
+ 
+ <mapping resource="com/uni_vice/update/univDTO.hbm.xml"/>
+ <mapping resource="com/uni_vice/update/vcDTO.hbm.xml"/>
+ 
+ <mapping resource="com/dept_empl/select/deptDTO.hbm.xml"/>
+ <mapping resource="com/dept_empl/select/emplDTO.hbm.xml"/>
+ 
+ <mapping resource="com/act_movi/delete/actDTO.hbm.xml"/>
+ <mapping resource="com/act_movi/delete/mveDTO.hbm.xml"/>
+ 
+  <mapping resource="com/patient_doc/practice/docDTO.hbm.xml"/>
+ <mapping resource="com/patient_doc/practice/patientDTO.hbm.xml"/>
+ 
+ <mapping resource="com/team_player/practice/teamDTO.hbm.xml"/>
+ <mapping resource="com/team_player/practice/playerDTO.hbm.xml"/>
+ 
+ <mapping resource="com/book_lib/get/bookDTO.hbm.xml"/>
+ <mapping resource="com/book_lib/get/libDTO.hbm.xml"/>
+ 
+ <mapping resource="com/teach_sub/update/teachDTO.hbm.xml"/>
+ <mapping resource="com/teach_sub/update/subDTO.hbm.xml"/>
+ 
+ </session-factory>
+ </hibernate-configuration>

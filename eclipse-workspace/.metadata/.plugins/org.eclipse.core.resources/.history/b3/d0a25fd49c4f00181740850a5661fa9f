@@ -1,0 +1,43 @@
+package com.cat_prod.practice;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Cat_Products_Test {
+
+	public static void main(String[] args) {
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session sesson = sessionFactory.openSession();
+		
+		Category c = new Category();
+		c.setCatid(1001);
+		c.setCatname("furniture");
+		
+		Products p1 = new Products();
+		p1.setProdid(91);
+		p1.setProdname("almirah");
+		p1.setQuantity(2);
+		
+		Products p2 = new Products();
+		p2.setProdid(92);
+		p2.setProdname("Door");
+		p2.setQuantity(3);
+		
+		
+		Set s = new HashSet();
+		s.add(p1);
+		s.add(p2);
+		
+		c.setProducts(s);
+		Transaction tx = sesson.beginTransaction();
+		sesson.save(c);
+		tx.commit();
+		sesson.close();
+	}
+}
